@@ -17,9 +17,9 @@ export const AuthGuard = ({ children }: AuthGuardProps) => {
     return <>{children}</>;
   }
 
-  // if (!isAuthenticated) {
-  //   return <Navigate to="/login" state={{ from: location }} replace />;
-  // }
+  if (!isAuthenticated) {
+    return <Navigate to="/login" state={{ from: location }} replace />;
+  }
 
   return <MobileLayout>{children}</MobileLayout>;
 }
